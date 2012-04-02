@@ -2,8 +2,12 @@
 from math import floor
 
 import unittest
-import pghstore
 import cpghstore
+try:
+    import pghstore
+except ImportError:
+    print "INFO: Could not import pghstore (have you done 'pip install pghstore'?)"
+    pghstore = None
 
 from benchmark import timefunc
 
@@ -17,9 +21,15 @@ names = [
 
 class LoadsBenchmark(unittest.TestCase):
     def test_loads(self):
+        n = 10000
         print ""
         for name in names:
-            cpg_time = timefunc(cpghstore.loads, 1000, name)
-            pg_time = timefunc(pghstore.loads, 1000, name)
-            self.assertTrue(cpg_time < pg_time)
-            print ".. cpghstore.loads is %ix faster than pghstore.loads (strlen=%i)" % (floor(pg_time / cpg_time), len(name))
+            cpg_time = timefunc(cpghstore.loads, n, name)
+            if pghstore:
+                pg_time = timefunc(pghstore.loads, n, name)
+                self.assertTrue(cpg_time < pg_time)
+                print ".. n=%i, strlen=%i, cpghstore.loads (%.2fs) is %ix faster than pghstore.loads (%.2fs)" % (
+                    n, len(name), cpg_time, floor(pg_time / cpg_time), pg_time)
+            else:
+                print ".. n=%i, strlen=%i, cpghstore.loads done in %.2fs" % (
+                    n, len(name), cpg_time)
