@@ -14,7 +14,7 @@ you want comparisons to be shown).
 
 Installation
 ============
-Download the
+Run ``pip install cpghstore``or download the
 source from `GitHub <http://github.com/kajic/cpghstore>`_ and run ``python
 setup.py install``.
 
