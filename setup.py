@@ -21,6 +21,7 @@ setup(
     description='Fast postgres hstore parser.',
     author='Robert Kajic',
     author_email='robert@{nospam}kajic.com',
+    url='https://github.com/kajic/cpghstore',
     license='MIT',
     plaforms=['any'],
     ext_modules=[cpghstore],
