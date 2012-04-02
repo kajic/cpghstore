@@ -1,16 +1,17 @@
 =========
 cpghstore
 =========
-:Info: cpghstore is a fast decoder/encoder of the PostgreSQL `hstore
-<http://www.postgresql.org/docs/9.0/static/hstore.html>`_ data type.
+:Info: cpghstore is a fast decoder/encoder of the PostgreSQL hstore
+       data type (http://www.postgresql.org/docs/9.0/static/hstore.html).
 :Author: Robert Kajic (http://github.com/kajic)
 
 About
 =====
-cpghstore is written in C and is meant to be a fast alternative to `pghstore
-<http://pypi.python.org/pypi/pghstore>`_. Run ``python setup.py benchmark`` to
-see how it performs (requires pghstore to be installed if you want 
-comparisons to be shown).
+cpghstore is written in C and is meant to be a faster (up to ~130x faster
+decoding, up to ~60x faster encoding) alternative to
+`pghstore <http://pypi.python.org/pypi/pghstore>`_. Run ``python setup.py
+benchmark`` to see how it performs (requires pghstore to be installed if you
+want comparisons to be shown).
 
 Installation
 ============
