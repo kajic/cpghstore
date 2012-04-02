@@ -16,6 +16,8 @@ class DumpsTests(unittest.TestCase):
     def test_one(self):
         d = {"key": "value"}
         self.assertDumpsMatchesDict(cpghstore.dumps(d), d)
+        d = {"name": "Norge/Noreg"}
+        self.assertDumpsMatchesDict(cpghstore.dumps(d), d)
 
     def test_two(self):
         d = {"key": "value", "key2": "value2"}
