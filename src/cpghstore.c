@@ -145,6 +145,7 @@ cpghstore_dumps(PyObject *self, PyObject *args)
     Py_INCREF(citation);
     PyList_SetItem(list, i, citation); i++;
     // add arrow (=>)
+    Py_INCREF(arrow);
     PyList_SetItem(list, i, arrow); i++;
     // add value or null
     if (value != Py_None) {
