@@ -14,7 +14,7 @@ you want comparisons to be shown).
 
 Installation
 ============
-Run ``pip install cpghstore``or download the
+Run ``pip install cpghstore`` or download the
 source from `GitHub <http://github.com/kajic/cpghstore>`_ and run ``python
 setup.py install``.
 
@@ -43,6 +43,6 @@ pghstore to be installed if you want comparisons to be shown).
 
 Limitations
 ===========
-Supports only str strings (i.e. not unicode string).
-Can only decode (loads) string values, i.e. "key"=>"123" is supported but
+Supports only str strings (i.e. not unicode strings).
+Can only decode (loads) string values, i.e. "key"=>"123" is supported while
 "key"=>123 is not.
