@@ -26,7 +26,7 @@ setup(
     author_email='robert@{nospam}kajic.com',
     url='https://github.com/kajic/cpghstore',
     license='MIT',
-    plaforms=['any'],
+    platforms=['any'],
     ext_modules=[cpghstore],
     classifiers=CLASSIFIERS,
     test_suite='tests',
