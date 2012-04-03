@@ -1,6 +1,5 @@
 import distribute_setup
 distribute_setup.use_setuptools()
-
 from setuptools import setup, Extension
 
 cpghstore = Extension(
@@ -18,10 +17,17 @@ CLASSIFIERS = [
     'Topic :: Software Development :: Libraries :: Python Modules',
 ]
 
+LONG_DESCRIPTION = None
+try:
+    LONG_DESCRIPTION = open('README.rst').read()
+except:
+    pass
+
 setup(
     name='cpghstore',
     version='0.1',
     description='Fast postgres hstore parser.',
+    long_description=LONG_DESCRIPTION,
     author='Robert Kajic',
     author_email='robert@{nospam}kajic.com',
     url='https://github.com/kajic/cpghstore',
